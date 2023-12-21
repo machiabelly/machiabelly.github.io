@@ -1,21 +1,24 @@
 body {
-    background-color: rgb(17, 32, 48);
-    color: rgb(77, 152, 134);
-    font-family: 'Futura', monospace;
+    background-color: #38424d;
+    color: #d8cfbb;
+    font-family: "Source Code Pro", monospace;
     text-align: center;
     padding-top: 20%;
 }
 
 h1 {
     font-weight: bold;
+    font-size: 36px;
 }
 
 p {
-    font-weight: normal;
+    font-size: 14px;
+    font-style: italic;
 }
 
 a {
-    color: rgb(255, 255, 255);
+    color: #fdfdff;
+    font-style: italic;
     text-decoration: none;
 }
 
