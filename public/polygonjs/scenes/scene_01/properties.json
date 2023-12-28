@@ -1,0 +1,10 @@
+{
+	"frame": 687756,
+	"maxFrame": 600,
+	"maxFrameLocked": false,
+	"realtimeState": true,
+	"mainCameraPath": "/orthographicCamera1",
+	"versions": {
+		"polygonjs": "1.5.49"
+	}
+}

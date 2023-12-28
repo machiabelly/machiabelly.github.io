@@ -1,0 +1,24 @@
+{
+	"type": "root",
+	"nodes": {
+		"orthographicCamera1": {
+			"type": "orthographicCamera",
+			"params": {
+				"t": [0, 10, 0],
+				"r": [-90, 0, 0],
+				"size": 17,
+				"doPostProcess": 1,
+				"postProcessNode": "../postProcessNetwork1"
+			},
+			"flags": {
+				"display": true
+			}
+		},
+		"COP": {
+			"type": "copNetwork"
+		}
+	},
+	"params": {
+		"mainCameraPath": "/orthographicCamera1"
+	}
+}

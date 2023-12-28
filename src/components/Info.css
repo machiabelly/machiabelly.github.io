@@ -1,0 +1,18 @@
+.Info {
+	background-color: #000000;
+	color: #ffffff;
+	padding: 0px 20px; /* Adjust as needed */
+	box-sizing: border-box;
+	font-family: 'Source Code Pro', monospace;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 0;
+}
+
+.Info h1 {
+    margin-bottom: 0px; /* Adjust as needed */
+}
+.Info p {
+    margin-top: 0px; /* Adjust as needed */
+}

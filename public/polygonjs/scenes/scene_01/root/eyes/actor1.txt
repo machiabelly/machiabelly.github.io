@@ -1,0 +1,61 @@
+// insert defines
+class CustomActorEvaluator extends ActorEvaluator {
+	// insert members
+
+	// /eyes/actor1/rayFromCursor1
+	v_POLY_rayFromCursor1_Ray = computed(() => globalsRayFromCursor());
+
+	// /eyes/actor1/plane1
+	v_POLY_plane1_Plane = computed(() => planeSet(VAR__plane1_normal.set(0, 1, 0), 0.0, VAR__plane1__1));
+
+	// /eyes/actor1/rayIntersectPlane1
+	v_POLY_rayIntersectPlane1_position = computed(() =>
+		rayIntersectPlane(this.v_POLY_rayFromCursor1_Ray.value, this.v_POLY_plane1_Plane.value, VAR__rayIntersectPlane1_)
+	);
+
+	// /eyes/actor1/add1
+	v_POLY_add1_sum = computed(() =>
+		addVector(
+			VAR__add1_add0.copy(this.v_POLY_rayIntersectPlane1_position.value),
+			VAR__add1_add1.copy(this.v_POLY_constant2_val.value),
+			VAR__add1_add2.set(0, 0, 0)
+		)
+	);
+
+	// /eyes/actor1/onTick1
+	v_POLY_onTick1_time = computed(() => globalsTime());
+	v_POLY_onTick1_delta = computed(() => globalsTimeDelta());
+
+	// /eyes/actor1/constant2
+	v_POLY_constant2_val = { value: VAR__constant2_vector3.set(0, 2, 0) };
+
+	// /eyes/actor1/constant1
+	v_POLY_constant1_val = { value: VAR__constant1_vector3.set(0, 0, 1) };
+
+	constructor(node, object3D) {
+		super(node, object3D);
+		// insert after constructor
+	}
+	// insert body
+
+	onTick() {
+		this.onTick1();
+	}
+	// /eyes/actor1/onTick1
+	onTick1() {
+		this.setObjectLookAt1(0);
+	}
+
+	// /eyes/actor1/setObjectLookAt1
+	setObjectLookAt1() {
+		setObjectLookAt(
+			this.object3D,
+			VAR__setObjectLookAt1_targetPosition.copy(this.v_POLY_add1_sum.value),
+			VAR__setObjectLookAt1_up.copy(this.v_POLY_constant1_val.value),
+			1.0,
+			true,
+			false
+		);
+	}
+}
+return CustomActorEvaluator;

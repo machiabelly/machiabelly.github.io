@@ -1,0 +1,13 @@
+{
+	"type": "materialsNetwork",
+	"nodes": {
+		"meshStandard1": {
+			"type": "meshStandard",
+			"params": {
+				"emissive": [1, 1, 1],
+				"emissiveIntensity": 0,
+				"roughness": 0
+			}
+		}
+	}
+}
