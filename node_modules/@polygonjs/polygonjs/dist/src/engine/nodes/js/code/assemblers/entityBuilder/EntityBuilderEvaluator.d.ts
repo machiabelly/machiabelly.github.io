@@ -1,1 +1,0 @@
-export type EntityBuilderEvaluator = () => void;
