@@ -4,7 +4,7 @@ import {visualizer} from 'rollup-plugin-visualizer';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	base: '/',
+	base: '/landing_page',
 	plugins: [
 		react(),
 		visualizer({
