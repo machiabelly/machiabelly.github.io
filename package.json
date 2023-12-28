@@ -18,7 +18,7 @@
 		"polygonjs-editor": "1.5.49-1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"homepage": "https://machiabelly.github.io/"
+		"homepage": "https://benelliot.net"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "6.9.1",
