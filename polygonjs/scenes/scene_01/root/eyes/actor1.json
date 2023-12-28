@@ -1,0 +1,279 @@
+{
+	"type": "actor",
+	"nodes": {
+		"onTick1": {
+			"type": "onTick"
+		},
+		"plane1": {
+			"type": "plane"
+		},
+		"rayFromCursor1": {
+			"type": "rayFromCursor"
+		},
+		"rayIntersectPlane1": {
+			"type": "rayIntersectPlane",
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "Ray",
+					"node": "rayFromCursor1",
+					"output": "Ray"
+				},
+				{
+					"index": 1,
+					"inputName": "Plane",
+					"node": "plane1",
+					"output": "Plane"
+				}
+			]
+		},
+		"setObjectLookAt1": {
+			"type": "setObjectLookAt",
+			"params": {
+				"targetPosition": {
+					"overriden_options": {}
+				},
+				"up": {
+					"overriden_options": {}
+				},
+				"lerp": {
+					"overriden_options": {}
+				},
+				"invertDirection": {
+					"raw_input": true,
+					"overriden_options": {}
+				},
+				"updateMatrix": {
+					"raw_input": 0,
+					"overriden_options": {}
+				}
+			},
+			"maxInputsCount": 7,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "trigger",
+					"node": "onTick1",
+					"output": "trigger"
+				},
+				null,
+				{
+					"index": 2,
+					"inputName": "targetPosition",
+					"node": "add1",
+					"output": "sum"
+				},
+				{
+					"index": 3,
+					"inputName": "up",
+					"node": "constant1",
+					"output": "val"
+				}
+			]
+		},
+		"constant1": {
+			"type": "constant",
+			"params": {
+				"type": 6,
+				"vector3": [0, 0, 1]
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "Vector3",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"add1": {
+			"type": "add",
+			"params": {
+				"add0": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"add1": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"add2": {
+					"type": "vector3",
+					"default_value": [0, 0, 0],
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"maxInputsCount": 3,
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "add0",
+					"node": "rayIntersectPlane1",
+					"output": "position"
+				},
+				{
+					"index": 1,
+					"inputName": "add1",
+					"node": "constant2",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "add0",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "add1",
+						"type": "Vector3",
+						"isArray": false
+					},
+					{
+						"name": "add2",
+						"type": "Vector3",
+						"isArray": false
+					}
+				],
+				"out": [
+					{
+						"name": "sum",
+						"type": "Vector3",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"constant2": {
+			"type": "constant",
+			"params": {
+				"type": 6,
+				"vector3": [0, 2, 0]
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "Vector3",
+						"isArray": false
+					}
+				]
+			}
+		},
+		"onObjectHover1": {
+			"type": "onObjectHover",
+			"maxInputsCount": 6
+		}
+	},
+	"inputs": ["material1"],
+	"flags": {
+		"display": true
+	},
+	"persisted_config": {
+		"variableNames": [
+			"VAR__plane1_normal",
+			"VAR__plane1__1",
+			"VAR__constant2_vector3",
+			"VAR__rayIntersectPlane1_",
+			"VAR__add1_add0",
+			"VAR__add1_add1",
+			"VAR__add1_add2",
+			"VAR__constant1_vector3",
+			"VAR__setObjectLookAt1_targetPosition",
+			"VAR__setObjectLookAt1_up"
+		],
+		"variables": [
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Plane",
+				"data": {
+					"normal": [1, 0, 0],
+					"constant": 0
+				}
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			},
+			{
+				"type": "Vector3",
+				"data": [0, 0, 0]
+			}
+		],
+		"functionNames": [
+			"globalsRayFromCursor",
+			"planeSet",
+			"rayIntersectPlane",
+			"addVector",
+			"globalsTime",
+			"globalsTimeDelta",
+			"setObjectLookAt"
+		],
+		"serializedParamConfigs": [],
+		"eventDatas": [
+			{
+				"type": "pointermove",
+				"emitter": "canvas",
+				"jsType": "rayFromCursor"
+			},
+			{
+				"type": "touchmove",
+				"emitter": "canvas",
+				"jsType": "rayFromCursor"
+			},
+			{
+				"type": "pointermove",
+				"emitter": "canvas",
+				"jsType": "onObjectHover"
+			}
+		]
+	}
+}

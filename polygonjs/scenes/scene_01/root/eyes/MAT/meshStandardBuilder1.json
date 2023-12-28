@@ -1,0 +1,1605 @@
+{
+	"type": "meshStandardBuilder",
+	"nodes": {
+		"globals1": {
+			"type": "globals"
+		},
+		"output1": {
+			"type": "output",
+			"inputs": [
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				null,
+				{
+					"index": 7,
+					"inputName": "emissive",
+					"node": "floatToVec3_1",
+					"output": "vec3"
+				}
+			]
+		},
+		"vec2ToFloat1": {
+			"type": "vec2ToFloat",
+			"params": {
+				"vec": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "vec",
+					"node": "null2",
+					"output": "val"
+				}
+			]
+		},
+		"fit1": {
+			"type": "fit",
+			"params": {
+				"val": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"srcMin": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0.24
+				},
+				"srcMax": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0
+				},
+				"destMin": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 1
+				},
+				"destMax": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "val",
+					"node": "multAdd2",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"inputName": "srcMin",
+					"node": "sin1",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"inputName": "srcMax",
+					"node": "multAdd1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "val",
+						"type": "float"
+					},
+					{
+						"name": "srcMin",
+						"type": "float"
+					},
+					{
+						"name": "srcMax",
+						"type": "float"
+					},
+					{
+						"name": "destMin",
+						"type": "float"
+					},
+					{
+						"name": "destMax",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"floatToVec3_1": {
+			"type": "floatToVec3",
+			"params": {
+				"x": {
+					"overriden_options": {}
+				},
+				"y": {
+					"overriden_options": {}
+				},
+				"z": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "x",
+					"node": "ramp1",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"inputName": "y",
+					"node": "ramp2",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"inputName": "z",
+					"node": "ramp3",
+					"output": "val"
+				}
+			]
+		},
+		"ramp1": {
+			"type": "ramp",
+			"params": {
+				"input": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "input",
+					"node": "fit1",
+					"output": "val"
+				}
+			]
+		},
+		"ramp2": {
+			"type": "ramp",
+			"params": {
+				"input": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "input",
+					"node": "fit2",
+					"output": "val"
+				}
+			]
+		},
+		"ramp3": {
+			"type": "ramp",
+			"params": {
+				"input": {
+					"overriden_options": {}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "input",
+					"node": "fit3",
+					"output": "val"
+				}
+			]
+		},
+		"sin1": {
+			"type": "sin",
+			"params": {
+				"radians": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "radians",
+					"node": "multAdd3",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "radians",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd1": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 1
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 1
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "sin1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd2": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 4.5
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "vec2ToFloat1",
+					"output": "y"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd3": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0.4
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "null1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd4": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0.5
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "null1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd5": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0.6
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "null1",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"sin2": {
+			"type": "sin",
+			"params": {
+				"radians": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "radians",
+					"node": "multAdd4",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "radians",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"sin3": {
+			"type": "sin",
+			"params": {
+				"radians": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "radians",
+					"node": "multAdd5",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "radians",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"fit2": {
+			"type": "fit",
+			"params": {
+				"val": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"srcMin": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0.24
+				},
+				"srcMax": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0
+				},
+				"destMin": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 1
+				},
+				"destMax": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "val",
+					"node": "multAdd2",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"inputName": "srcMin",
+					"node": "sin2",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"inputName": "srcMax",
+					"node": "multAdd6",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "val",
+						"type": "float"
+					},
+					{
+						"name": "srcMin",
+						"type": "float"
+					},
+					{
+						"name": "srcMax",
+						"type": "float"
+					},
+					{
+						"name": "destMin",
+						"type": "float"
+					},
+					{
+						"name": "destMax",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd6": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 1
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 1
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "sin2",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"fit3": {
+			"type": "fit",
+			"params": {
+				"val": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"srcMin": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0.24
+				},
+				"srcMax": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0
+				},
+				"destMin": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 1
+				},
+				"destMax": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 0
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "val",
+					"node": "multAdd2",
+					"output": "val"
+				},
+				{
+					"index": 1,
+					"inputName": "srcMin",
+					"node": "sin3",
+					"output": "val"
+				},
+				{
+					"index": 2,
+					"inputName": "srcMax",
+					"node": "multAdd7",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "val",
+						"type": "float"
+					},
+					{
+						"name": "srcMin",
+						"type": "float"
+					},
+					{
+						"name": "srcMax",
+						"type": "float"
+					},
+					{
+						"name": "destMin",
+						"type": "float"
+					},
+					{
+						"name": "destMax",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"multAdd7": {
+			"type": "multAdd",
+			"params": {
+				"value": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"preAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 1
+				},
+				"mult": {
+					"type": "float",
+					"default_value": 1,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				},
+				"postAdd": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": true,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					},
+					"raw_input": 1
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "value",
+					"node": "sin3",
+					"output": "val"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "value",
+						"type": "float"
+					},
+					{
+						"name": "preAdd",
+						"type": "float"
+					},
+					{
+						"name": "mult",
+						"type": "float"
+					},
+					{
+						"name": "postAdd",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"null1": {
+			"type": "null",
+			"params": {
+				"in": {
+					"type": "float",
+					"default_value": 0,
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "in",
+					"node": "globals1",
+					"output": "time"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "float"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "float"
+					}
+				]
+			}
+		},
+		"null2": {
+			"type": "null",
+			"params": {
+				"in": {
+					"type": "vector2",
+					"default_value": [0, 0],
+					"options": {
+						"spare": true,
+						"editable": false,
+						"computeOnDirty": true,
+						"dependentOnFoundParam": false
+					}
+				}
+			},
+			"inputs": [
+				{
+					"index": 0,
+					"inputName": "in",
+					"node": "globals1",
+					"output": "uv"
+				}
+			],
+			"connection_points": {
+				"in": [
+					{
+						"name": "in",
+						"type": "vec2"
+					}
+				],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec2"
+					}
+				]
+			}
+		},
+		"instanceTransform1": {
+			"type": "instanceTransform"
+		},
+		"param1": {
+			"type": "param",
+			"params": {
+				"name": "pointer_pos",
+				"type": 4
+			},
+			"connection_points": {
+				"in": [],
+				"out": [
+					{
+						"name": "val",
+						"type": "vec3"
+					}
+				]
+			}
+		}
+	},
+	"params": {
+		"emissive": [1, 1, 1],
+		"ramp1": {
+			"type": "ramp",
+			"default_value": {
+				"interpolation": "cubic",
+				"points": [
+					{
+						"position": 0,
+						"value": 0
+					},
+					{
+						"position": 1,
+						"value": 1
+					}
+				]
+			},
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false,
+				"dependentOnFoundNode": true
+			},
+			"raw_input": {
+				"interpolation": "cubic",
+				"points": [
+					{
+						"position": 0,
+						"value": 0
+					},
+					{
+						"position": 0.5079071677962621,
+						"value": 1
+					},
+					{
+						"position": 1,
+						"value": 0
+					}
+				]
+			},
+			"overriden_options": {
+				"callback": "{}"
+			}
+		},
+		"pointer_pos": {
+			"type": "vector3",
+			"default_value": [0, 0, 0],
+			"options": {
+				"spare": true,
+				"computeOnDirty": true,
+				"cook": false,
+				"dependentOnFoundNode": true
+			},
+			"overriden_options": {
+				"callback": "{}"
+			}
+		}
+	},
+	"persisted_config": {
+		"material": {
+			"metadata": {
+				"version": 4.6,
+				"type": "Material",
+				"generator": "Material.toJSON"
+			},
+			"uuid": "/eyes/MAT/meshStandardBuilder1-main",
+			"type": "MeshStandardMaterial",
+			"color": 16777215,
+			"roughness": 1,
+			"metalness": 0,
+			"emissive": 16777215,
+			"envMapIntensity": 1,
+			"blendColor": 0,
+			"fog": false
+		},
+		"onBeforeCompileDataJSONWithoutShaders": {
+			"paramConfigs": [
+				{
+					"type": "ramp",
+					"name": "ramp1",
+					"defaultValue": {
+						"interpolation": "cubic",
+						"points": [
+							{
+								"position": 0,
+								"value": 0
+							},
+							{
+								"position": 1,
+								"value": 1
+							}
+						]
+					},
+					"uniformName": "v_POLY_ramp_ramp1"
+				},
+				{
+					"type": "ramp",
+					"name": "ramp1",
+					"defaultValue": {
+						"interpolation": "cubic",
+						"points": [
+							{
+								"position": 0,
+								"value": 0
+							},
+							{
+								"position": 1,
+								"value": 1
+							}
+						]
+					},
+					"uniformName": "v_POLY_ramp_ramp1"
+				},
+				{
+					"type": "ramp",
+					"name": "ramp1",
+					"defaultValue": {
+						"interpolation": "cubic",
+						"points": [
+							{
+								"position": 0,
+								"value": 0
+							},
+							{
+								"position": 1,
+								"value": 1
+							}
+						]
+					},
+					"uniformName": "v_POLY_ramp_ramp1"
+				},
+				{
+					"type": "vector3",
+					"name": "pointer_pos",
+					"defaultValue": [0, 0, 0],
+					"uniformName": "v_POLY_param_pointer_pos"
+				}
+			],
+			"timeDependent": true,
+			"resolutionDependent": false,
+			"raymarchingLightsWorldCoordsDependent": false
+		},
+		"customMaterials": {
+			"customDepthMaterial": {
+				"material": {
+					"metadata": {
+						"version": 4.6,
+						"type": "Material",
+						"generator": "Material.toJSON"
+					},
+					"uuid": "/eyes/MAT/meshStandardBuilder1-customDepthMaterial",
+					"type": "MeshDepthMaterial",
+					"name": "customDepthMaterial",
+					"blendColor": 0,
+					"depthPacking": 3201
+				},
+				"onBeforeCompileDataJSONWithoutShaders": {
+					"paramConfigs": [
+						{
+							"type": "ramp",
+							"name": "ramp1",
+							"defaultValue": {
+								"interpolation": "cubic",
+								"points": [
+									{
+										"position": 0,
+										"value": 0
+									},
+									{
+										"position": 1,
+										"value": 1
+									}
+								]
+							},
+							"uniformName": "v_POLY_ramp_ramp1"
+						},
+						{
+							"type": "ramp",
+							"name": "ramp1",
+							"defaultValue": {
+								"interpolation": "cubic",
+								"points": [
+									{
+										"position": 0,
+										"value": 0
+									},
+									{
+										"position": 1,
+										"value": 1
+									}
+								]
+							},
+							"uniformName": "v_POLY_ramp_ramp1"
+						},
+						{
+							"type": "ramp",
+							"name": "ramp1",
+							"defaultValue": {
+								"interpolation": "cubic",
+								"points": [
+									{
+										"position": 0,
+										"value": 0
+									},
+									{
+										"position": 1,
+										"value": 1
+									}
+								]
+							},
+							"uniformName": "v_POLY_ramp_ramp1"
+						},
+						{
+							"type": "vector3",
+							"name": "pointer_pos",
+							"defaultValue": [0, 0, 0],
+							"uniformName": "v_POLY_param_pointer_pos"
+						}
+					],
+					"timeDependent": true,
+					"resolutionDependent": false,
+					"raymarchingLightsWorldCoordsDependent": false
+				}
+			},
+			"customDistanceMaterial": {
+				"material": {
+					"metadata": {
+						"version": 4.6,
+						"type": "Material",
+						"generator": "Material.toJSON"
+					},
+					"uuid": "/eyes/MAT/meshStandardBuilder1-customDistanceMaterial",
+					"type": "MeshDistanceMaterial",
+					"name": "customDistanceMaterial",
+					"blendColor": 0
+				},
+				"onBeforeCompileDataJSONWithoutShaders": {
+					"paramConfigs": [
+						{
+							"type": "ramp",
+							"name": "ramp1",
+							"defaultValue": {
+								"interpolation": "cubic",
+								"points": [
+									{
+										"position": 0,
+										"value": 0
+									},
+									{
+										"position": 1,
+										"value": 1
+									}
+								]
+							},
+							"uniformName": "v_POLY_ramp_ramp1"
+						},
+						{
+							"type": "ramp",
+							"name": "ramp1",
+							"defaultValue": {
+								"interpolation": "cubic",
+								"points": [
+									{
+										"position": 0,
+										"value": 0
+									},
+									{
+										"position": 1,
+										"value": 1
+									}
+								]
+							},
+							"uniformName": "v_POLY_ramp_ramp1"
+						},
+						{
+							"type": "ramp",
+							"name": "ramp1",
+							"defaultValue": {
+								"interpolation": "cubic",
+								"points": [
+									{
+										"position": 0,
+										"value": 0
+									},
+									{
+										"position": 1,
+										"value": 1
+									}
+								]
+							},
+							"uniformName": "v_POLY_ramp_ramp1"
+						},
+						{
+							"type": "vector3",
+							"name": "pointer_pos",
+							"defaultValue": [0, 0, 0],
+							"uniformName": "v_POLY_param_pointer_pos"
+						}
+					],
+					"timeDependent": true,
+					"resolutionDependent": false,
+					"raymarchingLightsWorldCoordsDependent": false
+				}
+			},
+			"customDepthDOFMaterial": {
+				"material": {
+					"metadata": {
+						"version": 4.6,
+						"type": "Material",
+						"generator": "Material.toJSON"
+					},
+					"uuid": "/eyes/MAT/meshStandardBuilder1-customDepthDOFMaterial",
+					"type": "MeshDepthMaterial",
+					"name": "customDepthDOFMaterial",
+					"blendColor": 0,
+					"depthPacking": 3200
+				},
+				"onBeforeCompileDataJSONWithoutShaders": {
+					"paramConfigs": [
+						{
+							"type": "ramp",
+							"name": "ramp1",
+							"defaultValue": {
+								"interpolation": "cubic",
+								"points": [
+									{
+										"position": 0,
+										"value": 0
+									},
+									{
+										"position": 1,
+										"value": 1
+									}
+								]
+							},
+							"uniformName": "v_POLY_ramp_ramp1"
+						},
+						{
+							"type": "ramp",
+							"name": "ramp1",
+							"defaultValue": {
+								"interpolation": "cubic",
+								"points": [
+									{
+										"position": 0,
+										"value": 0
+									},
+									{
+										"position": 1,
+										"value": 1
+									}
+								]
+							},
+							"uniformName": "v_POLY_ramp_ramp1"
+						},
+						{
+							"type": "ramp",
+							"name": "ramp1",
+							"defaultValue": {
+								"interpolation": "cubic",
+								"points": [
+									{
+										"position": 0,
+										"value": 0
+									},
+									{
+										"position": 1,
+										"value": 1
+									}
+								]
+							},
+							"uniformName": "v_POLY_ramp_ramp1"
+						},
+						{
+							"type": "vector3",
+							"name": "pointer_pos",
+							"defaultValue": [0, 0, 0],
+							"uniformName": "v_POLY_param_pointer_pos"
+						}
+					],
+					"timeDependent": true,
+					"resolutionDependent": false,
+					"raymarchingLightsWorldCoordsDependent": false
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"type": "postProcessNetwork",
+	"nodes": {
+		"noise1": {
+			"type": "noise",
+			"inputs": ["blur2"],
+			"flags": {
+				"display": true
+			}
+		},
+		"blur1": {
+			"type": "blur",
+			"params": {
+				"amount": 0.88
+			},
+			"flags": {
+				"bypass": true
+			}
+		},
+		"blur2": {
+			"type": "blur",
+			"params": {
+				"amount": 0.5
+			}
+		}
+	}
+}
